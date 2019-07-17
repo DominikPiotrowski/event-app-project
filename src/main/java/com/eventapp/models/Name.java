@@ -1,5 +1,5 @@
 
-package com.evenapp.demo.models;
+package com.eventapp.models;
 
 import com.fasterxml.jackson.annotation.*;
 
@@ -11,10 +11,11 @@ import java.util.Map;
         "text",
         "html"
 })
-public class Description {
+public class Name {
+
     @Override
     public String toString() {
-        return "Description{" +
+        return "Name{" +
                 "text='" + text + '\'' +
                 ", html='" + html + '\'' +
                 ", additionalProperties=" + additionalProperties +

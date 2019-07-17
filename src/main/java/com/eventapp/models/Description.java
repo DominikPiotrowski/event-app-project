@@ -1,5 +1,5 @@
 
-package com.evenapp.demo.models;
+package com.eventapp.models;
 
 import com.fasterxml.jackson.annotation.*;
 
@@ -8,45 +8,44 @@ import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "x",
-        "y"
+        "text",
+        "html"
 })
-public class TopLeft {
-
+public class Description {
     @Override
     public String toString() {
-        return "TopLeft{" +
-                "x=" + x +
-                ", y=" + y +
+        return "Description{" +
+                "text='" + text + '\'' +
+                ", html='" + html + '\'' +
                 ", additionalProperties=" + additionalProperties +
                 '}';
     }
 
-    @JsonProperty("x")
-    private Integer x;
-    @JsonProperty("y")
-    private Integer y;
+    @JsonProperty("text")
+    private String text;
+    @JsonProperty("html")
+    private String html;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("x")
-    public Integer getX() {
-        return x;
+    @JsonProperty("text")
+    public String getText() {
+        return text;
     }
 
-    @JsonProperty("x")
-    public void setX(Integer x) {
-        this.x = x;
+    @JsonProperty("text")
+    public void setText(String text) {
+        this.text = text;
     }
 
-    @JsonProperty("y")
-    public Integer getY() {
-        return y;
+    @JsonProperty("html")
+    public String getHtml() {
+        return html;
     }
 
-    @JsonProperty("y")
-    public void setY(Integer y) {
-        this.y = y;
+    @JsonProperty("html")
+    public void setHtml(String html) {
+        this.html = html;
     }
 
     @JsonAnyGetter

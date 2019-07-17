@@ -1,5 +1,5 @@
 
-package com.evenapp.demo.models;
+package com.eventapp.models;
 
 import com.fasterxml.jackson.annotation.*;
 
@@ -12,10 +12,11 @@ import java.util.Map;
         "local",
         "utc"
 })
-public class End {
+public class Start {
+
     @Override
     public String toString() {
-        return "End{" +
+        return "Start{" +
                 "timezone='" + timezone + '\'' +
                 ", local='" + local + '\'' +
                 ", utc='" + utc + '\'' +
@@ -73,4 +74,3 @@ public class End {
     }
 
 }
-

@@ -1,4 +1,4 @@
-package com.evenapp.demo;
+package com.eventapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

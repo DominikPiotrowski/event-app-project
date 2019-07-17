@@ -1,4 +1,4 @@
-package com.evenapp.demo.models;
+package com.eventapp.models;
 
 import com.fasterxml.jackson.annotation.*;
 

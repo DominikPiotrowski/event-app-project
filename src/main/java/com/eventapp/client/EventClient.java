@@ -1,6 +1,6 @@
-package com.evenapp.demo.client;
+package com.eventapp.client;
 
-import com.evenapp.demo.models.EventBrait;
+import com.eventapp.models.EventBrait;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.http.HttpEntity;
@@ -18,7 +18,7 @@ public class EventClient {
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Authorization", "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        httpHeaders.add("Authorization", "Bearer 46SOXBWJNV2ICD7WICT2");
         HttpEntity httpEntity = new HttpEntity(httpHeaders);
 
         ResponseEntity<EventBrait> exchange =
