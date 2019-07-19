@@ -13,12 +13,14 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class EventClient {
 
+    //bierze dane z API przy odpaleniu apki
+
     @EventListener(ApplicationReadyEvent.class)
     public void EventClient() {
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Authorization", "Bearer 46SOXBWJNV2ICD7WICT2");
+        httpHeaders.add("Authorization", "Bearer xxxxxxxxxxxxxxxxxxxxxxxx");
         HttpEntity httpEntity = new HttpEntity(httpHeaders);
 
         ResponseEntity<EventBrait> exchange =

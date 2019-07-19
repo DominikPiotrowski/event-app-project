@@ -7,6 +7,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+//upload userów z repo
+
 @Service
 public class UserDetailsServiceImplement implements UserDetailsService {
     private UserRepo userRepo;
