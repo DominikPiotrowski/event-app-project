@@ -9,4 +9,5 @@ public class EventBriteEvent {
 
     @JsonProperty("name")
     private EventName name;
+
 }
