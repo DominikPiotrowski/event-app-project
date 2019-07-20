@@ -5,9 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class EventBriteEvent {
+class EventBriteEvent {
 
     @JsonProperty("name")
     private EventName name;
-
 }
