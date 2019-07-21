@@ -2,6 +2,9 @@ package com.eventapp.client;
 
 import com.eventapp.models.CommonEvent;
 
+import java.io.IOException;
+import java.util.List;
+
 public interface EventSource {
-    CommonEvent getEventData();
+    List<CommonEvent> getEventData() throws IOException;
 }
