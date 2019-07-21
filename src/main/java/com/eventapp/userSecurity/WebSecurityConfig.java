@@ -1,4 +1,4 @@
-package com.eventapp.security;
+package com.eventapp.userSecurity;
 
 import com.eventapp.repo.UserRepo;
 import com.eventapp.services.UserDetailsServiceImplement;

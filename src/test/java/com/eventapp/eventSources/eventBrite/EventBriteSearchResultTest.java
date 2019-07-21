@@ -1,6 +1,6 @@
 package com.eventapp.eventSources.eventBrite;
 
-import com.eventapp.eventSources.eventBrite.model.EventBriteSearchResult;
+import com.eventapp.eventSources.eventBrite.eventBriteModel.EventBriteSearchResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.eventapp.eventSources.eventBrite.model;
+package com.eventapp.eventSources.eventBrite.eventBriteModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 
-class EventName {
-    @JsonProperty("text")
-    private String eventName;
+class EventEndDate {
+    @JsonProperty("utc")
+    private String eventEndDateTime;
 }

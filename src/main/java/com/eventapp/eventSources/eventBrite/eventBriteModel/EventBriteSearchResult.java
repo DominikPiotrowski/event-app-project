@@ -1,4 +1,4 @@
-package com.eventapp.eventSources.eventBrite.model;
+package com.eventapp.eventSources.eventBrite.eventBriteModel;
 
 import com.eventapp.models.CommonEvent;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -13,7 +13,6 @@ public class EventBriteSearchResult {
     private List<EventBriteEvent> events;
 
     public List<CommonEvent> toCommonModel() {
-
         return events
                 .stream()
                 .map(EventBriteToCommonModelMapper::map)

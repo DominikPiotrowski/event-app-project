@@ -1,4 +1,4 @@
-package com.eventapp.eventSources.eventBrite.model;
+package com.eventapp.eventSources.eventBrite.eventBriteModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

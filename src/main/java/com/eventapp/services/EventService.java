@@ -13,34 +13,34 @@ import java.util.List;
 public class EventService {
     private ICommonEventRepo iCommonEventRepo;
     private ICommonEventCustomRepo iCommonEventCustomRepo;
-    
+
     @Autowired
     public EventService(ICommonEventRepo iCommonEventRepo, ICommonEventCustomRepo iCommonEventCustomRepo) {
         this.iCommonEventCustomRepo = iCommonEventCustomRepo;
         this.iCommonEventRepo = iCommonEventRepo;
     }
 
-    public List<CommonEvent> findAll() {
+    public List<CommonEvent> findAll() throws ResourceNotFoundException {
         return iCommonEventCustomRepo.findAll();
     }
 
-    public CommonEvent findByName(String name) {
+    public CommonEvent findByName(String name) throws ResourceNotFoundException {
         return (CommonEvent) iCommonEventCustomRepo.findByName(name);
     }
 
-    public List findByCity(String city) {
+    public List findByCity(String city) throws ResourceNotFoundException {
         return iCommonEventCustomRepo.findByCity(city);
     }
 
-    public List findByCountry(String country) {
+    public List findByCountry(String country) throws ResourceNotFoundException {
         return iCommonEventCustomRepo.findByCountry(country);
     }
 
-    public List findByStartDate(LocalDateTime startDate) {
+    public List findByStartDate(LocalDateTime startDate) throws ResourceNotFoundException {
         return iCommonEventCustomRepo.findByStartDate(startDate);
     }
 
-    public List<CommonEvent> findByEndDate(LocalDateTime endDate) {
-        return  iCommonEventCustomRepo.findByEndDate(endDate);
+    public List<CommonEvent> findByEndDate(LocalDateTime endDate) throws ResourceNotFoundException {
+        return iCommonEventCustomRepo.findByEndDate(endDate);
     }
 }

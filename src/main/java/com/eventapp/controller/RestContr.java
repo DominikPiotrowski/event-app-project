@@ -14,8 +14,6 @@ import java.util.Optional;
 @RequestMapping("")
 public class RestContr {
 
-    //TODO --tutaj zasoby z endopointami, metody do nich
-
     private EventService eventService;
 
     @Autowired
