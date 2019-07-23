@@ -10,11 +10,11 @@ import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResour
 import org.springframework.security.oauth2.client.token.AccessTokenProvider;
 import org.springframework.security.oauth2.client.token.AccessTokenProviderChain;
 import org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsAccessTokenProvider;
+import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider;
 import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 import org.springframework.security.oauth2.client.token.grant.implicit.ImplicitAccessTokenProvider;
 import org.springframework.security.oauth2.client.token.grant.password.ResourceOwnerPasswordAccessTokenProvider;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
-import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider;
 
 import java.util.Arrays;
 
@@ -36,9 +36,9 @@ class ResourceConfiguration {
     private String clientSecret;
 
     @Bean
-    public OAuth2ProtectedResourceDetails reddit() {
+    public OAuth2ProtectedResourceDetails eventBriteOAuth() {
         AuthorizationCodeResourceDetails details = new AuthorizationCodeResourceDetails();
-        details.setId("reddit");
+        details.setId("eventBrite");
         details.setClientId(clientID);
         details.setClientSecret(clientSecret);
         details.setAccessTokenUri(accessTokenUri);
@@ -51,8 +51,8 @@ class ResourceConfiguration {
     }
 
     @Bean
-    public OAuth2RestTemplate redditRestTemplate(OAuth2ClientContext clientContext) {
-        OAuth2RestTemplate template = new OAuth2RestTemplate(reddit(), clientContext);
+    public OAuth2RestTemplate eventBriteRestTemplate(OAuth2ClientContext clientContext) {
+        OAuth2RestTemplate template = new OAuth2RestTemplate(eventBriteOAuth(), clientContext);
         AccessTokenProvider accessTokenProvider = new AccessTokenProviderChain(
                 Arrays.<AccessTokenProvider>asList(
                         new AuthorizationCodeAccessTokenProvider(),

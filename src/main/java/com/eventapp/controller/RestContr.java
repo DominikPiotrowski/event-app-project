@@ -7,6 +7,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -25,7 +26,7 @@ public class RestContr {
     @GetMapping("/findAll")
     @ResponseStatus(HttpStatus.FOUND)
     public Iterable<CommonEvent> findAll() {
-        return (Iterable<CommonEvent>) eventService.findAll();
+        return eventService.findAll();
     }
     @GetMapping("findByName")
     @ResponseStatus(HttpStatus.FOUND)
