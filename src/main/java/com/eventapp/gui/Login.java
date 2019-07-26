@@ -33,8 +33,10 @@ public class Login extends VerticalLayout implements BeforeEnterObserver {
         loginButton.getElement().setAttribute("theme", "primary");
         HorizontalLayout buttonsLayout = new HorizontalLayout(loginButton);
         VerticalLayout divLayout = new VerticalLayout(username, password, buttonsLayout);
+
         divLayout.setAlignSelf(Alignment.END, buttonsLayout);
         Div loginDiv = new Div(divLayout);
+
         setAlignItems(Alignment.CENTER);
         username.focus();
         add(loginDiv);

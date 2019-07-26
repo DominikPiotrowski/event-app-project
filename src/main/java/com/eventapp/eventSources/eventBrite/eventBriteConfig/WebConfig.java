@@ -12,6 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @ComponentScan(basePackages = { "org.baeldung.web" })
 public class WebConfig implements WebMvcConfigurer {
+
     @Bean
     public static PropertySourcesPlaceholderConfigurer
     propertySourcesPlaceholderConfigurer() {
