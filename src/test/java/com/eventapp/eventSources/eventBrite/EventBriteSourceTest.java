@@ -1,6 +1,6 @@
 package com.eventapp.eventSources.eventBrite;
 
-import com.eventapp.gui.App;
+import com.eventapp.App;
 import com.eventapp.models.CommonEvent;
 import org.junit.Test;
 import org.junit.runner.RunWith;
