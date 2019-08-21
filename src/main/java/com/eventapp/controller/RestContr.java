@@ -1,14 +1,14 @@
 package com.eventapp.controller;
 
-import com.eventapp.models.CommonEvent;
+import com.eventapp.eventSources.eventBrite.SearchParams;
 import com.eventapp.services.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 import java.time.LocalDateTime;
-import java.util.Optional;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("")
@@ -21,35 +21,22 @@ public class RestContr {
         this.eventService = eventService;
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    @GetMapping("/findAll")
-    @ResponseStatus(HttpStatus.FOUND)
-    public Iterable<CommonEvent> findAll() {
-        return (Iterable<CommonEvent>) eventService.findAll();
-    }
-    @GetMapping("findByName")
-    @ResponseStatus(HttpStatus.FOUND)
-    public Optional<CommonEvent> findByName(@RequestParam String name) {
-        return Optional.ofNullable(eventService.findByName(name));
-    }
-    @GetMapping("/findByCity")
-    @ResponseStatus(HttpStatus.FOUND)
-    public Iterable<CommonEvent> findByCity(@RequestParam String city) {
-        return eventService.findByCity(city);
-    }
-    @GetMapping("/findByCountry")
-    @ResponseStatus(HttpStatus.FOUND)
-    public Iterable<CommonEvent> findByCountry(@RequestParam String country) {
-        return eventService.findByCountry(country);
-    }
-    @GetMapping("findByStartDate")
-    @ResponseStatus(HttpStatus.FOUND)
-    public Iterable<CommonEvent> findByStartDate(@RequestParam LocalDateTime startDate) {
-        return eventService.findByStartDate(startDate);
-    }
-    @GetMapping("findByEndDate")
-    @ResponseStatus(HttpStatus.FOUND)
-    public Iterable<CommonEvent> findByEndDate(@RequestParam LocalDateTime endDate) {
-        return eventService.findByEndDate(endDate);
+    @GetMapping("/findEvent")
+    @ResponseStatus(HttpStatus.OK)
+    public Map<String, Object> findEvent(
+            @RequestParam String eventName,
+            @RequestParam LocalDateTime eventStartDate,
+            @RequestParam LocalDateTime eventEndDate,
+            @RequestParam String city,
+            @RequestParam String country) {
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put(String.valueOf(SearchParams.EVENT_NAME), eventName);
+        parameters.put(String.valueOf(SearchParams.EVENT_START_DATE), eventStartDate);
+        parameters.put(String.valueOf(SearchParams.EVENT_END_DATE), eventEndDate);
+        parameters.put(String.valueOf(SearchParams.CITY), city);
+        parameters.put(String.valueOf(SearchParams.COUNTRY), country);
+
+        return parameters;
     }
 }
